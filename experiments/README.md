@@ -3,8 +3,8 @@
 The sources used for these experiments with ODoH come from these github: 
 - https://github.com/cloudflare/odoh-rs (server Rust)
 - https://github.com/cloudflare/odoh-client-rs/ (client Rust) 
-- (server Golang)
-- (client Golang)
+- https://github.com/cloudflare/odoh-go (server Golang)
+- https://github.com/cloudflare/odoh-client-go (client Golang)
 
 
 # Rust code 
