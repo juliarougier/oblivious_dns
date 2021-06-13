@@ -48,14 +48,31 @@ In this code, the target and the proxy servers are available and editable in the
 
 <img width="1186" alt="Capture d’écran 2021-06-13 à 15 37 59" src="https://user-images.githubusercontent.com/72855563/121809511-5715bf80-cc5d-11eb-9b61-e97e185d2444.png">
 
-I found some others DNS servers free and available, and I wanted to try with them to send ODoH queries, in order to see (or not) if there are any differences between the answers obtained with the default servers and others I chose.
+I found some others DNS servers free and available, and I wanted to try with them to send ODoH queries, in order to see if there are any differences between the answers obtained with the default servers and others I chose.
 
-
-
+Only some servers are compatible with this implementation. In this code, there is an issue with the *ObliviousDoHConfig*. New servers have a length too short for the default configuration. The source of this problem is in the source library, the code *odoh-rs*. 
 
 ### Golang code 
 
 I tried to reproduce with [this](https://github.com/chris-wood/odoh-client), the tab showing the test with different targets and proxies supported by ODoH.
 
+```sh
+./odoh-client odoh --domain www.github.com. --dnstype AAAA --target odoh-target-rs.crypto-team.workers.dev --proxy odoh-proxy-dot-odoh-target.wm.r.appspot.com
+```
+This command send a ODoH Query via a proxy, with others proxy and target servers as the first simples commands I did. 
+
+The first error I had was about go routines. 
+
+<img width="1188" alt="Capture d’écran 2021-06-13 à 17 29 51" src="https://user-images.githubusercontent.com/72855563/121813885-694c2980-cc6e-11eb-9efb-52f790bd4d47.png">
+
+
+With the other code, the cloudflare's one, *odoh-client-go*, I also tried this command; in order to reproduce the tab. As I had with the Rust code, I obtained an error message about the lenght of the servers. The source of this problem is in the source library, the code *odoh-go*. 
+
+<img width="1188" alt="Capture d’écran 2021-06-13 à 17 42 17" src="https://user-images.githubusercontent.com/72855563/121813941-b7f9c380-cc6e-11eb-9750-9c918a6f80f4.png">
+
+
+Here is the line where is the condition in the file *odoh-test* of the source code *odoh-go*.
+<img width="1181" alt="Capture d’écran 2021-06-13 à 17 52 09" src="https://user-images.githubusercontent.com/72855563/121814278-6a7e5600-cc70-11eb-94d4-d9fe3f951cb0.png">
+Servers I tried to put and to use haven't the good length. I tried to modify and to comment this condition, but this code isn't mine and used a lot of external files, so it's not really easy to edit it. 
 
 
