@@ -21,6 +21,12 @@ This is what I obtained with the Golang code :
 Indeed, I did a ODoH query, via a proxy, with a AAAA record type (equal to the rust query just before). In the answer, we don't have any @IPv6 address for this domain name, but there is a different section, that isn't in all answers. 
 This section is the _**AUTHORITY SECTION**_. 
 
+And with the _**dig**_ command : 
+
+<img width="904" alt="Capture d’écran 2021-06-13 à 15 43 28" src="https://user-images.githubusercontent.com/72855563/121809699-1cf8ed80-cc5e-11eb-8515-ecb53ce4ea94.png">
+
+There's also the _**AUTHORITY SECTION**_
+
 The Authority section indicates the server(s) that are the ultimate authority for answering DNS queries about that domain.
 
 The reason for this section is that I can query any DNS server(s), which will accept my query, to answer a query for me. 
@@ -41,4 +47,6 @@ There are two others examples of domain names which answer with an _**AUTHORITY 
 In this code, the target and the proxy servers are available and editable in the *config.toml* file.
 
 <img width="1186" alt="Capture d’écran 2021-06-13 à 15 37 59" src="https://user-images.githubusercontent.com/72855563/121809511-5715bf80-cc5d-11eb-9b61-e97e185d2444.png">
+
+I found some others DNS servers free and available, and I wanted to try with them to send ODoH queries, in order to see (or not) if there are any differences, with query time, information... 
 
