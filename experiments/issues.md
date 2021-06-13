@@ -27,7 +27,7 @@ And with the _**dig**_ command :
 
 There's also the _**AUTHORITY SECTION**_
 
-The Authority section indicates the server(s) that are the ultimate authority for answering DNS queries about that domain.
+This section indicates the server(s) that are the ultimate authority for answering DNS queries about that domain.
 
 The reason for this section is that I can query any DNS server(s), which will accept my query, to answer a query for me. 
 That server may choose though to answer the query from a cache. However, if I want to ensure I get an authoritative response - I should ask the server(s) in the authority section.
@@ -48,5 +48,14 @@ In this code, the target and the proxy servers are available and editable in the
 
 <img width="1186" alt="Capture d’écran 2021-06-13 à 15 37 59" src="https://user-images.githubusercontent.com/72855563/121809511-5715bf80-cc5d-11eb-9b61-e97e185d2444.png">
 
-I found some others DNS servers free and available, and I wanted to try with them to send ODoH queries, in order to see (or not) if there are any differences, with query time, information... 
+I found some others DNS servers free and available, and I wanted to try with them to send ODoH queries, in order to see (or not) if there are any differences between the answers obtained with the default servers and others I chose.
+
+
+
+
+### Golang code 
+
+I tried to reproduce with [this](https://github.com/chris-wood/odoh-client), the tab showing the test with different targets and proxies supported by ODoH.
+
+
 
