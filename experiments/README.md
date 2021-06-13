@@ -69,7 +69,7 @@ This client code in Go language offers several features. It is possible to make 
 Before doing queries, I had to build the executable file with this command : 
 
 ```sh
-go build 
+go build -o odoh-client ./cmd/...
 ```
 
 ### 1. DoH Query test 
