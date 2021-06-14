@@ -74,5 +74,6 @@ With the other code, the cloudflare's one, *odoh-client-go*, I also tried this c
 Here is the line where is the condition in the file *odoh-test* of the source code *odoh-go*.
 <img width="1181" alt="Capture d’écran 2021-06-13 à 17 52 09" src="https://user-images.githubusercontent.com/72855563/121814278-6a7e5600-cc70-11eb-94d4-d9fe3f951cb0.png">
 Servers I tried to put and to use haven't the good length. I tried to modify and to comment this condition, but this code isn't mine and used a lot of external files, so it's not really easy to edit it. 
+I suppose that if I could modify this condition in the source code, replace the target and proxy servers would be easier. 
 
 
