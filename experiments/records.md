@@ -65,6 +65,7 @@ The target and proxy servers are the default, but after I'll try with others.
 In the answers, we obtain a lot of informations : 
 
 <img width="1029" alt="Capture d’écran 2021-06-15 à 10 47 00" src="https://user-images.githubusercontent.com/72855563/122029864-8c411f80-cdcd-11eb-90e4-9631252bece8.png">
+
 *This is just a part of the .json file, with the answer for one hostname (the entire file is in the folder)*
 
 We have all the time informations I detailled before (Start, ClientEncryptionTime, EndTime...), but also the hostname, the proxy and target servers, the key of encryption... 
