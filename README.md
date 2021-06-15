@@ -28,7 +28,7 @@ ODoH works by adding a layer of public key encryption, as well as a network prox
 
 ![image6-2](https://user-images.githubusercontent.com/72855563/121778066-73e6c000-cb95-11eb-92a6-85d0350f5156.png)
 
-Here a shceme showing the ODoH dispositive. 
+Here a scheme showing the ODoH dispositive. 
 
 This protocol is neither stable nor officially deployed. However, Cloudflare does provide two ODoH tests.
 The first is available at this address: the odoh client in Rust language, working with the odoh-rs server.
