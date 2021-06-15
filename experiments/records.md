@@ -1,6 +1,6 @@
 # ODoH Benchmarks 
 
-## 1. *benchmarks.go
+## 1. *benchmarks.go*
 
 One of the goals I set for myself was to successfully send ODoH requests, but also to be able to obtain performance measurement results, among other things, on this new protocol.
 
@@ -28,7 +28,7 @@ This structure defines the parameters which will be recorded and saved in an out
 
 <img width="589" alt="Capture d’écran 2021-06-14 à 17 58 38" src="https://user-images.githubusercontent.com/72855563/121922470-4c7d2800-cd3a-11eb-9dac-b6e19800abfd.png">
 
-## 2. *commands.go
+## 2. *commands.go*
 
 In this file, there are all the commands which the user could tape into the terminal. Each command has a particular usage. 
 
@@ -52,4 +52,18 @@ The different parameters are the following :
 
 ## 3. Using the bench command
 
-For this example, I used the data file called *source.csv*, that I've put in the same folder as this file. I 
+For this example, I used the data file called *source.csv*, that I've put in the same folder as this file. In this .csv file, there are about 200 domain names, the top 200 of the top 1500. 
+
+The command I've put in the terminal is this one : 
+
+__*./odoh-client bench --data source.csv --pick 200 --numclients 200 --rate 15 --logout log1.txt --out output1.json --target odoh.cloudflare-dns.com --proxy odoh1.surfdomeinen.nl --dnstype AAAA*__
+
+Here, I used the source.csv file as dataset, I chose 200 pick, 200 client instances, a rate of 15, the logout file is called log1.txt and the output one is called output1.json. 
+
+The target and proxy servers are the default, but after I'll try with others. 
+
+In the answers, we obtain a lot of informations : 
+
+<img width="1029" alt="Capture d’écran 2021-06-15 à 10 47 00" src="https://user-images.githubusercontent.com/72855563/122029864-8c411f80-cdcd-11eb-90e4-9631252bece8.png">
+
+
